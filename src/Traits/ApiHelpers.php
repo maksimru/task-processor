@@ -21,9 +21,9 @@ trait ApiHelpers
      * @param            $exit_code
      * @param            $http_code
      *
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
-     *
      * @throws \Exception
+     *
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
     private function prepareFailedResponse($exception, $exit_code, $http_code)
     {
@@ -43,9 +43,9 @@ trait ApiHelpers
     /**
      * @param \Closure $closure
      *
-     * @return Response
-     *
      * @throws \Exception
+     *
+     * @return Response
      */
     private function handleApiRequest(\Closure $closure)
     {
@@ -57,7 +57,7 @@ trait ApiHelpers
             return response()->json(
                 [
                     'status' => false,
-                    'code' => StatusCode::INTERNAL_SERVER_ERROR,
+                    'code'   => StatusCode::INTERNAL_SERVER_ERROR,
                 ],
                 StatusCode::INTERNAL_SERVER_ERROR
             );
@@ -65,17 +65,17 @@ trait ApiHelpers
             return response()->json(
                 [
                     'status' => false,
-                    'code' => StatusCode::NOT_FOUND,
+                    'code'   => StatusCode::NOT_FOUND,
                 ],
                 StatusCode::NOT_FOUND
             );
         } catch (ValidationException $validationException) {
             return response()->json(
                 [
-                    'status' => false,
-                    'code' => StatusCode::NOT_ACCEPTABLE,
+                    'status'    => false,
+                    'code'      => StatusCode::NOT_ACCEPTABLE,
                     'exit_code' => 1,
-                    'messages' => $validationException->errors(),
+                    'messages'  => $validationException->errors(),
                 ],
                 StatusCode::NOT_ACCEPTABLE
             );

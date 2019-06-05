@@ -21,7 +21,7 @@ class ConfigurationTest extends TestCase
     protected function getPackageProviders($app)
     {
         return [
-            JobProcessorServiceProvider::class
+            JobProcessorServiceProvider::class,
         ];
     }
 }

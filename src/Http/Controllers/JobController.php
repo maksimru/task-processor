@@ -19,9 +19,9 @@ class JobController
     /**
      * Display a listing of the resource.
      *
-     * @return Response
-     *
      * @throws Exception
+     *
+     * @return Response
      */
     public function index()
     {
@@ -53,9 +53,9 @@ class JobController
      *
      * @param Request $request
      *
-     * @return Response
-     *
      * @throws Exception
+     *
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -79,9 +79,9 @@ class JobController
      *
      * @param int $id
      *
-     * @return Response
-     *
      * @throws Exception
+     *
+     * @return Response
      */
     public function show($id)
     {

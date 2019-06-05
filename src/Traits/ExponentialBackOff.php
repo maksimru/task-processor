@@ -16,10 +16,10 @@ trait ExponentialBackOff
      * @param float|int     $cap
      * @param float|int     $base
      *
-     * @return mixed
-     *
      * @throws ExponentialBackOffAttemptsExceededException
      * @throws \Exception
+     *
+     * @return mixed
      */
     public function callWithExponentialBackOff(
         \Closure $callable,
@@ -39,13 +39,14 @@ trait ExponentialBackOff
                     $shouldMakeRetryAttempt = true;
                 }
                 if ($shouldMakeRetryAttempt) {
-                    ++$attempts;
+                    $attempts++;
                     usleep(mt_rand(0, min($cap, $base * 2 ** $attempts)));
                 } else {
                     throw $exception;
                 }
             }
         } while ($attempts <= $maxAttempts);
+
         throw new ExponentialBackoffAttemptsExceededException('Function failed after '.($attempts - 1).' attempts');
     }
 }

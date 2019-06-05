@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateJobsTable extends Migration
 {
-
     //table
     public $table = 'jobs';
 

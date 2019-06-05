@@ -89,7 +89,7 @@ class Job extends Model
         $endTime = $this->getMicroTime();
         $this->update(
             [
-                'is_processed' => true,
+                'is_processed'    => true,
                 'processing_time' => $endTime - $startupTime,
             ]
         );

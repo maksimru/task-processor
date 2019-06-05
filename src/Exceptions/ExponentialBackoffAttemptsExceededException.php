@@ -2,6 +2,6 @@
 
 namespace MaksimM\JobProcessor\Exceptions;
 
-class ExponentialBackOffAttemptsExceededException extends \Exception
+class ExponentialBackoffAttemptsExceededException extends \Exception
 {
 }

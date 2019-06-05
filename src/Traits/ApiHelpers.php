@@ -17,30 +17,6 @@ trait ApiHelpers
     protected $authenticatedSubmitter;
 
     /**
-     * @param \Exception $exception
-     * @param            $exit_code
-     * @param            $http_code
-     *
-     * @throws \Exception
-     *
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
-     */
-    private function prepareFailedResponse($exception, $exit_code, $http_code)
-    {
-        if (request()->wantsJson() || request()->isXmlHttpRequest()) {
-            $error = ['status' => 'false', 'exit_code' => $exit_code];
-            if ($exception instanceof ValidationException) {
-                $error['messages'] = $exception->errors();
-            }
-
-            return response()->json($error, $http_code);
-        } else {
-            //pass to original exception handler
-            throw $exception;
-        }
-    }
-
-    /**
      * @param \Closure $closure
      *
      * @throws \Exception

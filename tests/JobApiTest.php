@@ -95,6 +95,24 @@ class JobApiTest extends TestCase
      *
      * @throws Exception
      */
+    public function jobShowMissingJobTest()
+    {
+        $this->executeWithinAuthentication(
+            function () {
+                $apiResponse = $this->json(
+                    'GET',
+                    route('task.show', [999], false)
+                );
+                $apiResponse->assertResponseStatus(404);
+            }
+        );
+    }
+
+    /**
+     * @test
+     *
+     * @throws Exception
+     */
     public function jobPullTest()
     {
         $job_id = $this->jobCreationTest();

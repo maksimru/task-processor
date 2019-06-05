@@ -10,9 +10,9 @@ trait TaskReader
     use ExponentialBackOff;
 
     /**
-     * @return Job|bool
-     *
      * @throws JobLockedException
+     *
+     * @return Job|bool
      */
     private function getNextJob()
     {

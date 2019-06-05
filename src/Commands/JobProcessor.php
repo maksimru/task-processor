@@ -19,9 +19,9 @@ class JobProcessor extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
-     *
      * @throws ExponentialBackOffAttemptsExceededException
+     *
+     * @return mixed
      */
     public function handle()
     {

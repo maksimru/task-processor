@@ -52,7 +52,7 @@ class JobProcessorServiceProvider extends ServiceProvider
         $router->group(
             [
                 'middleware' => 'auth',
-                'namespace' => 'MaksimM\JobProcessor\Http\Controllers',
+                'namespace'  => 'MaksimM\JobProcessor\Http\Controllers',
             ],
             function ($router) {
                 require __DIR__.'/Http/routes.php';

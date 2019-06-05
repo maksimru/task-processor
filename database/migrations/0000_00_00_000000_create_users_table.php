@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
-
     //table
     public $table = 'users';
 
